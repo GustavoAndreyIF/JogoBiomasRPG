@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua Mesorregião</title>
+    <style>
+
+        body {
+
+            display: flex; /* Ativa o Flexbox para o corpo da página */
+            flex-direction: column; /* Organiza os elementos na vertical */
+            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            font-family: Arial; /* Define a fonte da página */
+            margin: 0; /* Remove as margens padrão */
+            padding: 20px; /* Adiciona espaçamento ao redor da página */
+        }
+        h1 {
+            text-align: center;
+            font-family: arial;
+        }
+
+        .container {
+            display: grid; /* Ativa o Grid para o contêiner */
+            grid-template-columns: repeat(2, 1fr); /* Define 2 colunas */
+            gap: 20px; /* Espaço entre as caixas */
+            max-width: 800px; /* Limita a largura total do contêiner */
+            width: 100%; /* Faz com que o contêiner use a largura total disponível */
+        }
+
+        .box {
+            display: flex; /* Ativa o Flexbox nas caixas */
+            flex-direction: column; /* Organiza os itens dentro da caixa na vertical */
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #000000;
+            border-radius: 8px; /* Bordas arredondadas */
+            margin: 10px;
+            padding: 20px; /*separa as informações da borda*/
+            width: 270px; /*largura*/
+            text-align: center;
+        }
+
+        .box img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .p {
+            color: #666; /* Cor do texto informativo */
+            font-size: 1em; /* Tamanho da fonte */
+            margin: 10px 0; /* Espaço acima e abaixo do parágrafo */
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha sua mesorregião</h1>
+
+    <div class="container">
+        <div class="box">
+            <img src="imagem.jpg" alt="Central Potiguar">
+            <h2>CENTRAL POTIGUAR</h2>
+            <p>INFORMAÇÕES</p>
+            <button>Escolher</button>
+        </div>
+
+        <div class="box">
+            <img src="imagem.jpg" alt="LESTE Potiguar">
+            <h2>LESTE POTIGUAR</h2>
+            <p>INFORMAÇÕES</p>
+            <button>Escolher</button>
+        </div>
+
+        <div class="box">
+            <img src="imagem.jpg" alt="AGRESTE Potiguar">
+            <h2>AGRESTE POTIGUAR</h2>
+            <p>INFORMAÇÕES</p>
+            <button>Escolher</button>
+        </div>
+
+        <div class="box">
+            <img src="imagem.jpg" alt="OESTE Potiguar">
+            <h2>OESTE POTIGUAR</h2>
+            <p>INFORMAÇÕES</p>
+            <button>Escolher</button>
+        </div>
+    </div>
+</body>
+</html>
