@@ -1,1 +1,0 @@
-// 1. exibir a pergunta e as alternativas dentro da div "pergunta" e alternativa.

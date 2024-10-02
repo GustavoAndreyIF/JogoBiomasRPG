@@ -1,10 +1,10 @@
+import { regiaoSelecionada } from "../service/usuarioDados.js";
 // objetos contendo todas as perguntas
-let biomaSelecionado = "Agreste Potiguar"; // temporario
 export const medicoPerguntas = {};
 export const agricultorPerguntas = {
   0: {
     pergunta: {
-      str1: `Você está trabalhando em uma fazenda localizada no ${biomaSelecionado}.`,
+      str1: `Você está trabalhando em uma fazenda localizada no ${regiaoSelecionada}.`,
       img: "404",
       str2: "Durante a estação seca, você percebe que a produtividade das suas plantações está diminuindo drasticamente. Qual seria a melhor estratégia para lidar com essa situação?",
     },
