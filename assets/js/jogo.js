@@ -5,10 +5,11 @@ import { profissoes } from "../../utils/profissoes.js";
 let profissaoGlobal;
 
 async function carregarDados() {
-  //importa a profissao selecionada pelo usuario
+  //importa a profissao selecionada pelo usuario.
+  //const profissaoSelecionada = localStorage.getItem('profissaoSelecionada');
   const { profissaoSelecionada } = await import(
     "../../service/usuarioDados.js"
-  );
+  ); // troca isso pela linha 9
   // usa a profissao selecionada para importar as perguntas da profissao
   switch (profissaoSelecionada) {
     case "medico":
