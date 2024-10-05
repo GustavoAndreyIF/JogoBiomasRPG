@@ -9,16 +9,30 @@
     <h1>RPG</h1>
     <label for="nome">Nome: </label>
     <input type="text" id="nome"> <br><br>
+    <label for="profissao">Profissão: </label>
+    <input type="text" id="profissao" readonly><br>
+    
     <h2>Atributos</h2>
-    <label for="forca">Força: </label>   
+    <button onclick="rolarAtributo()">Rolagem de dado</button> <br>
 
-    <label for="agilidade">Agilidade: </label>   
+    <label for="forca">Força: </label>
+    <input type="text" id="forca" readonly><br> <!-- valor do campo nao pode ser alterado pelo usuário --> 
+
+    <label for="agilidade">Agilidade: </label>
+    <input type="text" id="agilidade" readonly><br>    
    
-    <label for="inteligencia">Inteligência: </label>   
+    <label for="inteligencia">Inteligência: </label>
+    <input type="text" id="inteligencia" readonly><br>    
 
-    <label for="carisma">Carisma: </label>   
+    <label for="carisma">Carisma: </label>
+    <input type="text" id="carisma" readonly><br>    
  
-    <label for="constituicao">Constituição: </label>   
- 
+    <label for="constituicao">Constituição: </label>
+    <input type="text" id="constituicao" readonly><br> 
+
 </body>
+<script src="../assets/js/ficha.js"></script>
+
+<!-- O ../ volta uma pasta em relação ao arquivo atual.
+Se o arquivo JavaScript estivesse duas pastas acima, você usaria ../../ para subir dois níveis, e assim por diante. -->
 </html>
