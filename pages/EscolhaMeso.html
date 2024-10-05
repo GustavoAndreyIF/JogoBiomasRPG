@@ -16,9 +16,8 @@
             display: flex; /* container flexivel */
             flex-direction: column; 
             align-items: center; 
-            font-family: 'selva'; 
-            margin: 0; 
-            padding: 20px; /* Adiciona espaçamento ao redor da página */
+            font-family: 'selva';  
+            padding: 20px; /*separa as informações da borda*/
         }
         h1 {
             text-align: center;
@@ -30,7 +29,6 @@
             grid-template-columns: repeat(2, 1fr); /* Define 2 colunas por linha */
             gap: 20px; /* Espaço entre as caixas */
             max-width: 800px; /* Limita a largura total do contêiner */
-            width: 100%; /* Faz com que o contêiner use a largura total disponível */
         }
 
         .box /*elemento filho*/ {
@@ -38,19 +36,16 @@
             flex-direction: column; /* Organiza os itens dentro da caixa na vertical */
             background-color: rgb(255, 255, 255);
             border: 1px solid #000000;
-            border-radius: 8px; /* Bordas arredondadas */
-            margin: 10px;
+            border-radius: 8px; /* bordas arredondadas */
             padding: 20px; /*separa as informações da borda*/
             width: 270px; /*largura*/
-            height: 300px;
+            height: 300px; /*altura*/
             text-align: center;
         }
 
         .box img {
-            max-width: 100%;
             border-radius: 5px;
             height: 200px; /* Define uma altura fixa para as imagens */
-            object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
             object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
         }
         .info {
@@ -69,29 +64,30 @@
             <img src="https://live.staticflickr.com/8014/7490170364_8d88b85271_b.jpg" alt="Central Potiguar">
             <h2>CENTRAL POTIGUAR</h2>
             <p class="info">INFORMAÇÕES</p>
-            <button>Escolher</button>
+            <button onclick="escolhermesorregiao('Central Potiguar', 'Profissao1')">Escolher</button>
         </div>
 
         <div class="box">
             <img src="https://blogdeviagens.com.br/wp-content/uploads/2022/05/forte-1-984x600.png" alt="LESTE Potiguar">
             <h2>LESTE POTIGUAR</h2>
             <p class="info">INFORMAÇÕES</p>
-            <button>Escolher</button>
+            <button onclick="escolhermesorregiao('Leste Potiguar', 'Profissao2')">Escolher</button>
         </div>
 
         <div class="box">
             <img src="https://novo.grandeponto.com.br/storage/backup/noticias/202108121200590DHtNL.jpg" alt="AGRESTE Potiguar">
             <h2>AGRESTE POTIGUAR</h2>
             <p class="info">INFORMAÇÕES</p>
-            <button>Escolher</button>
+            <button onclick="escolhermesorregiao('Agreste Potiguar', 'Profissao3')">Escolher</button>
         </div>
 
         <div class="box">
             <img src="https://blog.tuaterra.com.br/wp-content/uploads/2019/03/mossoro.jpg" alt="OESTE Potiguar">
             <h2>OESTE POTIGUAR</h2>
             <p class="info">INFORMAÇÕES</p>
-            <button>Escolher</button>
+            <button onclick="escolhermesorregiao('Oeste Potiguar', 'Profissao4')">Escolher</button>
         </div>
     </div>
 </body>
+<script src="../service/usuarioDados.js"></script>
 </html>

@@ -28,11 +28,17 @@
     <input type="text" id="carisma" readonly><br>    
  
     <label for="constituicao">Constituição: </label>
-    <input type="text" id="constituicao" readonly><br> 
+    <input type="text" id="constituicao" readonly><br>
+
+    <script>
+        window.onload = function() {
+            const profissao = localStorage.getItem('profissao');
+                document.getElementById('profissao').value = profissao;
+        }
+    </script>
 
 </body>
 <script src="../assets/js/ficha.js"></script>
-
 <!-- O ../ volta uma pasta em relação ao arquivo atual.
 Se o arquivo JavaScript estivesse duas pastas acima, você usaria ../../ para subir dois níveis, e assim por diante. -->
 </html>

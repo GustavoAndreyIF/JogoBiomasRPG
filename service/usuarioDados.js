@@ -1,7 +1,6 @@
-// use isso ai embaixo para armazenar as opcoes selecionadas para o localstorage
-// localStorage.setItem('profissaoSelecionada', 'perguntaSelecionada');
-// localStorage.setItem('regiaoSelecionada', 'regiaoSeleconada');
-export const profissaoSelecionada = "agricultor"; // temporario
-// localStorage.getItem('profissaoSelecionada');
-const regiaoSelecionada = "agrestePotiguar"; // quando as telas de seleçoes estiverem pronto e so puxar os valores do localstorage
-// localStorage.getItem('mesoregiaoSelecionada');
+function escolhermesorregiao(mesorregiao, profissao) { // parametros
+    localStorage.setItem('mesorregiaoSelecionada', mesorregiao); //chave
+    localStorage.setItem('profissaoSelecionada', profissao); //chave
+// Redireciona para a página da ficha
+    window.location.href = '../pages/ficha.html';
+}
