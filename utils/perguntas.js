@@ -78,5 +78,110 @@ export const medicoPerguntas = {
       },
     },
   },
+  2: {
+    pergunta: {
+      p1: `1`,
+      p2: "2",
+    },
+    alternativas: {
+      0: "1",
+      1: "2",
+      2: "3",
+    },
+    dt: {
+      0: 12,
+      1: 16,
+      2: 18,
+    },
+    dtbonus: {
+      0: "conhecimento",
+      1: "resistencia",
+      2: "percepcao",
+    },
+    resultado: {
+      0: {
+        true: "1",
+        false: "0",
+      },
+      1: {
+        true: "1",
+        false: "0",
+      },
+      2: {
+        true: "1",
+        false: "0",
+      },
+    },
+  },
+  3: {
+    pergunta: {
+      p1: `1`,
+      p2: "2",
+    },
+    alternativas: {
+      0: "1",
+      1: "2",
+      2: "3",
+    },
+    dt: {
+      0: 12,
+      1: 16,
+      2: 18,
+    },
+    dtbonus: {
+      0: "conhecimento",
+      1: "resistencia",
+      2: "percepcao",
+    },
+    resultado: {
+      0: {
+        true: "1",
+        false: "0",
+      },
+      1: {
+        true: "1",
+        false: "0",
+      },
+      2: {
+        true: "1",
+        false: "0",
+      },
+    },
+  },
+  4: {
+    pergunta: {
+      p1: `1`,
+      p2: "2",
+    },
+    alternativas: {
+      0: "1",
+      1: "2",
+      2: "3",
+    },
+    dt: {
+      0: 12,
+      1: 16,
+      2: 18,
+    },
+    dtbonus: {
+      0: "conhecimento",
+      1: "resistencia",
+      2: "percepcao",
+    },
+    resultado: {
+      0: {
+        true: "1",
+        false: "0",
+      },
+      1: {
+        true: "1",
+        false: "0",
+      },
+      2: {
+        true: "1",
+        false: "0",
+      },
+    },
+  },
 };
 export const artesaoPerguntas = {};

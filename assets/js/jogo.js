@@ -3,6 +3,7 @@ import { rolarDados } from "../../utils/d20script.js";
 import { profissoes } from "../../utils/profissoes.js";
 // varavel global para armazena o objeto da profissao selecionada
 let profissaoGlobal;
+let erros = 0;
 
 async function carregarDados() {
   //importa a mesoregiao selecionada pelo usuario.
@@ -99,9 +100,13 @@ async function carregarPergunta(numPergunta = 0) {
           // se der bom acontece isso, se não acontece aquilo (else)
           resultado.textContent =
             perguntaSelecionada[numPergunta].resultado[key].true;
+          console.log("Você acertou!");
         } else {
           resultado.textContent =
             perguntaSelecionada[numPergunta].resultado[key].false;
+          erros++;
+          console.log("Você errou!");
+          console.log(erros);
         }
         resposta.appendChild(resultado);
         // esconde os botoes apos a escolha
@@ -129,6 +134,7 @@ function botaoProximaPergunta(numPergunta) {
     carregarPergunta(numPergunta);
   });
   respostabtn.appendChild(proximaPergunta);
+  perdeuJogo();
 }
 
 async function executarJogo() {
@@ -136,6 +142,23 @@ async function executarJogo() {
   await carregarDados();
   // carrega a primeira pergunta
   carregarPergunta();
+}
+
+function perdeuJogo() {
+  if (erros >= 3) {
+    // isso aqui apaga tudo quando perde, futuramente adicionar uma tela de game over
+    document.querySelector("#pergunta").innerHTML = "";
+    document.querySelector("#alternativas").innerHTML = "";
+    document.querySelector("#resposta").innerHTML = "";
+    console.log("Você perdeu o jogo!");
+    const respostabtn = document.querySelector("#resposta");
+    const jogarNovamentebtn = document.createElement("button");
+    jogarNovamentebtn.textContent = "Jogar Novamente";
+    jogarNovamentebtn.addEventListener("click", () => {
+      window.location.href = "../index.html";
+    });
+    respostabtn.appendChild(jogarNovamentebtn);
+  }
 }
 
 executarJogo();
