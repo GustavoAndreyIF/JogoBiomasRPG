@@ -1,7 +1,8 @@
-import { regiaoSelecionada } from "../service/usuarioDados.js";
+let regiaoSelecionada = localStorage.getItem("mesorregiaoSelecionada");
 // objetos contendo todas as perguntas
-export const medicoPerguntas = {};
-export const agricultorPerguntas = {
+export const pedreiroPerguntas = {};
+export const agricultorPerguntas = {};
+export const medicoPerguntas = {
   0: {
     pergunta: {
       // texto e o p, e img e caso a pergunta tenha uma imagem, se não tiver de boa
@@ -78,4 +79,4 @@ export const agricultorPerguntas = {
     },
   },
 };
-export const biologoPerguntas = {};
+export const artesaoPerguntas = {};

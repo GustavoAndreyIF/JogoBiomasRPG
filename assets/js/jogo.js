@@ -5,14 +5,12 @@ import { profissoes } from "../../utils/profissoes.js";
 let profissaoGlobal;
 
 async function carregarDados() {
-  //importa a profissao selecionada pelo usuario.
-  //const profissaoSelecionada = localStorage.getItem('profissaoSelecionada');
-  const { profissaoSelecionada } = await import(
-    "../../service/usuarioDados.js"
-  ); // troca isso pela linha 9
+  //importa a mesoregiao selecionada pelo usuario.
+  const profissaoSelecionada = localStorage.getItem("mesorregiaoSelecionada");
+
   // usa a profissao selecionada para importar as perguntas da profissao
   switch (profissaoSelecionada) {
-    case "medico":
+    case "centralPotiguar":
       const { medicoPerguntas } = await import("../../utils/perguntas.js");
       console.log(medicoPerguntas);
       localStorage.setItem(
@@ -22,22 +20,31 @@ async function carregarDados() {
       profissaoGlobal = profissoes.medico;
       console.log(profissaoGlobal);
       break;
-    case "agricultor":
+    case "lestePotiguar":
+      const { pedreiroPerguntas } = await import("../../utils/perguntas.js");
+      console.log(pedreiroPerguntas);
+      localStorage.setItem(
+        "perguntaSelecionada",
+        JSON.stringify(pedreiroPerguntas)
+      );
+      profissaoGlobal = profissoes.agricultor;
+      console.log(profissaoGlobal);
+      break;
+    case "agrestePotiguar":
+      const { artesaoPerguntas } = await import("../../utils/perguntas.js");
+      console.log(artesaoPerguntas);
+      localStorage.setItem(
+        "perguntaSelecionada",
+        JSON.stringify(artesaoPerguntas)
+      );
+      profissaoGlobal = profissoes.biologo;
+      console.log(profissaoGlobal);
+    case "oestePotiguar":
       const { agricultorPerguntas } = await import("../../utils/perguntas.js");
       console.log(agricultorPerguntas);
       localStorage.setItem(
         "perguntaSelecionada",
         JSON.stringify(agricultorPerguntas)
-      );
-      profissaoGlobal = profissoes.agricultor;
-      console.log(profissaoGlobal);
-      break;
-    case "biologo":
-      const { biologoPerguntas } = await import("../../utils/perguntas.js");
-      console.log(biologoPerguntas);
-      localStorage.setItem(
-        "perguntaSelecionada",
-        JSON.stringify(biologoPerguntas)
       );
       profissaoGlobal = profissoes.biologo;
       console.log(profissaoGlobal);
