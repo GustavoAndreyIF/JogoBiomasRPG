@@ -1,8 +1,6 @@
 // importa a função de d20
 import { rolarDados } from "../../utils/d20script.js";
-import { profissoes } from "../../utils/profissoes.js";
-// varavel global para armazena o objeto da profissao selecionada
-let profissaoGlobal;
+let profissaoAtributos = localStorage.getItem("atributosUsuario");
 let erros = 0;
 
 async function carregarDados() {
@@ -18,8 +16,6 @@ async function carregarDados() {
         "perguntaSelecionada",
         JSON.stringify(medicoPerguntas)
       );
-      profissaoGlobal = profissoes.medico;
-      console.log(profissaoGlobal);
       break;
     case "lestePotiguar":
       const { pedreiroPerguntas } = await import("../../utils/perguntas.js");
@@ -28,8 +24,6 @@ async function carregarDados() {
         "perguntaSelecionada",
         JSON.stringify(pedreiroPerguntas)
       );
-      profissaoGlobal = profissoes.agricultor;
-      console.log(profissaoGlobal);
       break;
     case "agrestePotiguar":
       const { artesaoPerguntas } = await import("../../utils/perguntas.js");
@@ -38,8 +32,6 @@ async function carregarDados() {
         "perguntaSelecionada",
         JSON.stringify(artesaoPerguntas)
       );
-      profissaoGlobal = profissoes.biologo;
-      console.log(profissaoGlobal);
     case "oestePotiguar":
       const { agricultorPerguntas } = await import("../../utils/perguntas.js");
       console.log(agricultorPerguntas);
@@ -47,8 +39,6 @@ async function carregarDados() {
         "perguntaSelecionada",
         JSON.stringify(agricultorPerguntas)
       );
-      profissaoGlobal = profissoes.biologo;
-      console.log(profissaoGlobal);
       break;
   }
 }
@@ -91,7 +81,7 @@ async function carregarPergunta(numPergunta = 0) {
         // pega o valor string que a alternativa usa de dtbonus do bonus da profissao
         const dtBonus = perguntaSelecionada[numPergunta].dtbonus;
         // usa o valor string para pegar o valor numerico do bonus da profissao
-        const bonusAplicado = profissaoGlobal[dtBonus[key]];
+        const bonusAplicado = profissaoAtributos[dtBonus[key]];
         // se a chave da alternativa escolhida for igual a chave do valor da dt, a resposta e exibida
         if (
           rolarDados() + bonusAplicado >=
