@@ -31,15 +31,20 @@ function rolarAtributo() {
   }
 }
 
-function profissaoAtributos(){
-    // pega o valor dos atributos e coloca em um objeto
-    const atributosUsuario = {
-      forca: document.querySelector("#forca").value,
-      agilidade: document.querySelector("#agilidade").value,
-      inteligencia: document.querySelector("#inteligencia").value,
-      carisma: document.querySelector("#carisma").value,
-      constituicao: document.querySelector("#constituicao").value
-    }   
+function profissaoAtributos() {
+  // pega o valor dos atributos e coloca em um objeto
+  const atributosUsuario = {
+    forca: document.querySelector("#forca").value,
+    agilidade: document.querySelector("#agilidade").value,
+    inteligencia: document.querySelector("#inteligencia").value,
+    carisma: document.querySelector("#carisma").value,
+    constituicao: document.querySelector("#constituicao").value,
+  };
+  console.log(atributosUsuario);
+  localStorage.setItem("atributosUsuario", JSON.stringify(atributosUsuario));
+}
 
-    localStorage.setItem('atributosUsuario', atributosUsuario);
+function salvarFicha() {
+  profissaoAtributos();
+  window.location.href = "../pages/jogo.html";
 }
