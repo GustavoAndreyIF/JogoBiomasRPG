@@ -132,20 +132,21 @@ async function botaoProximaPergunta(numPergunta) {
 		alternativas.style.display = "block"
 		carregarPergunta(numPergunta)
 	})
-	
+
 	const perguntaSelecionada = await JSON.parse(
 		localStorage.getItem("perguntaSelecionada")
 	)
 	// pega o tamanho do objeto das perguntas
 	const tamanhoPerguntas = Object.keys(perguntaSelecionada).length
 	// se ultrapassar o tamanho do objeto, o jogo acaba
-	if (numPergunta < tamanhoPerguntas) {
+	if (numPergunta < tamanhoPerguntas && erros < 3) {
 		respostabtn.appendChild(proximaPergunta)
 	} else {
-		ganhouJogo()
+		ganhouJogobtn()
 	}
-	// so executa com 3 erros
-	perdeuJogo()
+	if (erros === 3) {
+		perdeuJogobtn()
+	}
 }
 
 async function executarJogo() {
@@ -153,6 +154,42 @@ async function executarJogo() {
 	await carregarDados()
 	// carrega a primeira pergunta
 	carregarPergunta()
+}
+
+function ganhouJogobtn() {
+	const proximoAcertobtn = document.querySelector("#resposta")
+	const proximobtn = document.createElement("button")
+	proximobtn.classList.add("proxima-pergunta-btn")
+	proximobtn.textContent = "Avançar"
+
+	proximobtn.addEventListener("click", () => {
+		// limpa tudo e coloca a proxima pergunta
+		document.querySelector("#pergunta").innerHTML = ""
+		document.querySelector("#alternativas").innerHTML = ""
+		document.querySelector("#resposta").innerHTML = ""
+		// exibi os botoes das alternativas
+		alternativas.style.display = "block"
+		ganhouJogo()
+	})
+	proximoAcertobtn.appendChild(proximobtn)
+}
+
+function perdeuJogobtn() {
+	const proximoErrobtn = document.querySelector("#resposta")
+	const proximobtn = document.createElement("button")
+	proximobtn.classList.add("proxima-pergunta-btn")
+	proximobtn.textContent = "Avançar"
+
+	proximobtn.addEventListener("click", () => {
+		// limpa tudo e coloca a proxima pergunta
+		document.querySelector("#pergunta").innerHTML = ""
+		document.querySelector("#alternativas").innerHTML = ""
+		document.querySelector("#resposta").innerHTML = ""
+		// exibi os botoes das alternativas
+		alternativas.style.display = "block"
+		perdeuJogo()
+	})
+	proximoErrobtn.appendChild(proximobtn)
 }
 
 function ganhouJogo() {
@@ -173,23 +210,21 @@ function ganhouJogo() {
 }
 
 function perdeuJogo() {
-	if (erros === 3) {
-		// isso aqui apaga tudo quando perde, futuramente adicionar uma tela de game over
-		document.querySelector("#pergunta").innerHTML = ""
-		document.querySelector("#alternativas").innerHTML = ""
-		document.querySelector("#resposta").innerHTML = ""
-		console.log("Você perdeu o jogo!")
-		const respostabtn = document.querySelector("#resposta")
-		const jogarNovamentebtn = document.createElement("button")
-		// o texto que aparece no bota
-		jogarNovamentebtn.textContent = "Jogar Novamente"
-		// adiciona a classe css no botao
-		jogarNovamentebtn.classList.add("jogar-novamente-btn")
-		jogarNovamentebtn.addEventListener("click", () => {
-			window.location.href = "../index.html"
-		})
-		respostabtn.appendChild(jogarNovamentebtn)
-	}
+	// isso aqui apaga tudo quando perde, futuramente adicionar uma tela de game over
+	document.querySelector("#pergunta").innerHTML = ""
+	document.querySelector("#alternativas").innerHTML = ""
+	document.querySelector("#resposta").innerHTML = ""
+	console.log("Você perdeu o jogo!")
+	const respostabtn = document.querySelector("#resposta")
+	const jogarNovamentebtn = document.createElement("button")
+	// o texto que aparece no bota
+	jogarNovamentebtn.textContent = "Jogar Novamente"
+	// adiciona a classe css no botao
+	jogarNovamentebtn.classList.add("jogar-novamente-btn")
+	jogarNovamentebtn.addEventListener("click", () => {
+		window.location.href = "../index.html"
+	})
+	respostabtn.appendChild(jogarNovamentebtn)
 }
 
 executarJogo()
