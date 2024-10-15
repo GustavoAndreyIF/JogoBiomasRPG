@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FICHA</title>
-    <style></style>
-</head>
-<body>
-    <h1>RPG</h1>
-    <label for="nome">Nome: </label>
-    <input type="text" id="nome"> <br><br>
-    <label for="profissao">Profissão: </label>
-    <input type="text" id="profissao" readonly><br>
-    
-    <h2>Atributos</h2>
-    <button onclick="rolarAtributo()">Rolagem de dado</button> <br>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FICHA</title>
+		<link rel="stylesheet" href="../assets/css/ficha.css" />
+	</head>
+	<body>
+		<h1>RPG</h1>
+		<label for="nome">Nome: </label>
+		<input type="text" id="nome" /> <br /><br />
+		<label for="profissao">Profissão: </label>
+		<input type="text" id="profissao" readonly /><br />
 
-    <label for="forca">Força: </label>
-    <input type="text" id="forca" readonly><br> <!-- valor do campo nao pode ser alterado pelo usuário --> 
+		<h2>Atributos</h2>
+		<button onclick="rolarAtributo()">Rolagem de dado</button> <br />
 
-    <label for="agilidade">Agilidade: </label>
-    <input type="text" id="agilidade" readonly><br>    
-   
-    <label for="inteligencia">Inteligência: </label>
-    <input type="text" id="inteligencia" readonly><br>    
+		<label for="forca">Força: </label>
+		<input type="text" id="forca" readonly /><br />
+		<!-- valor do campo nao pode ser alterado pelo usuário -->
 
-    <label for="carisma">Carisma: </label>
-    <input type="text" id="carisma" readonly><br>    
- 
-    <label for="constituicao">Constituição: </label>
-    <input type="text" id="constituicao" readonly><br>
+		<label for="agilidade">Agilidade: </label>
+		<input type="text" id="agilidade" readonly /><br />
 
-    <button onclick="salvarFicha()">Salvar</button>
-    <script>
-        window.onload = function() {
-            const profissao = localStorage.getItem('profissao');
-                document.getElementById('profissao').value = profissao;
-        }
-    </script>
+		<label for="inteligencia">Inteligência: </label>
+		<input type="text" id="inteligencia" readonly /><br />
 
-</body>
-<script src="../assets/js/ficha.js"></script>
-<!-- O ../ volta uma pasta em relação ao arquivo atual.
+		<label for="carisma">Carisma: </label>
+		<input type="text" id="carisma" readonly /><br />
+
+		<label for="constituicao">Constituição: </label>
+		<input type="text" id="constituicao" readonly /><br />
+
+		<button onclick="salvarFicha()">Salvar</button>
+		<script>
+			window.onload = function () {
+				const profissao = localStorage.getItem("profissao")
+				document.getElementById("profissao").value = profissao
+			}
+		</script>
+	</body>
+	<script src="../assets/js/ficha.js"></script>
+	<!-- O ../ volta uma pasta em relação ao arquivo atual.
 Se o arquivo JavaScript estivesse duas pastas acima, você usaria ../../ para subir dois níveis, e assim por diante. -->
 </html>
