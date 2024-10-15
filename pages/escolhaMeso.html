@@ -1,114 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escolha sua Mesorregião</title>
-    <style>
-      @font-face {
-        font-family: "selva"; /* Nome da fonte que você quer usar */
-        src: url("../fonts/Pine Forest Personal Use Only.otf")
-          format("truetype"); /* Caminho para a fonte */
-        font-weight: normal;
-        font-style: normal;
-      }
-      body {
-        background-color: brown;
-        display: flex; /* container flexivel */
-        flex-direction: column;
-        align-items: center;
-        font-family: "selva";
-        padding: 20px; /*separa as informações da borda*/
-      }
-      h1 {
-        text-align: center;
-        font-family: "selva";
-      }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Escolha sua Mesorregião</title>
+		<link rel="stylesheet" href="../assets/css/escolhaMeso.css" />
+	</head>
+	<body>
+		<h1>Escolha sua mesorregião</h1>
 
-      .container /*elemento pai*/ {
-        display: grid; /* estrutura de grade */
-        grid-template-columns: repeat(2, 1fr); /* Define 2 colunas por linha */
-        gap: 20px; /* Espaço entre as caixas */
-        max-width: 800px; /* Limita a largura total do contêiner */
-      }
+		<div class="container">
+			<div class="box">
+				<img
+					src="https://live.staticflickr.com/8014/7490170364_8d88b85271_b.jpg"
+					alt="Central Potiguar"
+				/>
+				<h2>CENTRAL POTIGUAR</h2>
+				<p class="info">INFORMAÇÕES</p>
+				<button onclick="escolhermesorregiao('centralPotiguar', 'Profissao1')">
+					Escolher
+				</button>
+			</div>
 
-      .box /*elemento filho*/ {
-        display: flex;
-        flex-direction: column; /* Organiza os itens dentro da caixa na vertical */
-        background-color: rgb(255, 255, 255);
-        border: 1px solid #000000;
-        border-radius: 8px; /* bordas arredondadas */
-        padding: 20px; /*separa as informações da borda*/
-        width: 270px; /*largura*/
-        height: 300px; /*altura*/
-        text-align: center;
-      }
+			<div class="box">
+				<img
+					src="https://blogdeviagens.com.br/wp-content/uploads/2022/05/forte-1-984x600.png"
+					alt="LESTE Potiguar"
+				/>
+				<h2>LESTE POTIGUAR</h2>
+				<p class="info">INFORMAÇÕES</p>
+				<button onclick="escolhermesorregiao('lestePotiguar', 'Profissao2')">
+					Escolher
+				</button>
+			</div>
 
-      .box img {
-        border-radius: 5px;
-        height: 200px; /* Define uma altura fixa para as imagens */
-        object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
-      }
-      .info {
-        font-family: Arial;
-        color: #666; /* Cor do texto informativo */
-        font-size: 1em; /* Tamanho da fonte */
-        margin: 10px 0; /* Espaço acima e abaixo do parágrafo */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Escolha sua mesorregião</h1>
+			<div class="box">
+				<img
+					src="https://novo.grandeponto.com.br/storage/backup/noticias/202108121200590DHtNL.jpg"
+					alt="AGRESTE Potiguar"
+				/>
+				<h2>AGRESTE POTIGUAR</h2>
+				<p class="info">INFORMAÇÕES</p>
+				<button onclick="escolhermesorregiao('agrestePotiguar', 'Profissao3')">
+					Escolher
+				</button>
+			</div>
 
-    <div class="container">
-      <div class="box">
-        <img
-          src="https://live.staticflickr.com/8014/7490170364_8d88b85271_b.jpg"
-          alt="Central Potiguar"
-        />
-        <h2>CENTRAL POTIGUAR</h2>
-        <p class="info">INFORMAÇÕES</p>
-        <button onclick="escolhermesorregiao('centralPotiguar', 'Profissao1')">
-          Escolher
-        </button>
-      </div>
-
-      <div class="box">
-        <img
-          src="https://blogdeviagens.com.br/wp-content/uploads/2022/05/forte-1-984x600.png"
-          alt="LESTE Potiguar"
-        />
-        <h2>LESTE POTIGUAR</h2>
-        <p class="info">INFORMAÇÕES</p>
-        <button onclick="escolhermesorregiao('lestePotiguar', 'Profissao2')">
-          Escolher
-        </button>
-      </div>
-
-      <div class="box">
-        <img
-          src="https://novo.grandeponto.com.br/storage/backup/noticias/202108121200590DHtNL.jpg"
-          alt="AGRESTE Potiguar"
-        />
-        <h2>AGRESTE POTIGUAR</h2>
-        <p class="info">INFORMAÇÕES</p>
-        <button onclick="escolhermesorregiao('agrestePotiguar', 'Profissao3')">
-          Escolher
-        </button>
-      </div>
-
-      <div class="box">
-        <img
-          src="https://blog.tuaterra.com.br/wp-content/uploads/2019/03/mossoro.jpg"
-          alt="OESTE Potiguar"
-        />
-        <h2>OESTE POTIGUAR</h2>
-        <p class="info">INFORMAÇÕES</p>
-        <button onclick="escolhermesorregiao('oestePotiguar', 'Profissao4')">
-          Escolher
-        </button>
-      </div>
-    </div>
-  </body>
-  <script src="../service/usuarioDados.js"></script>
+			<div class="box">
+				<img
+					src="https://blog.tuaterra.com.br/wp-content/uploads/2019/03/mossoro.jpg"
+					alt="OESTE Potiguar"
+				/>
+				<h2>OESTE POTIGUAR</h2>
+				<p class="info">INFORMAÇÕES</p>
+				<button onclick="escolhermesorregiao('oestePotiguar', 'Profissao4')">
+					Escolher
+				</button>
+			</div>
+		</div>
+	</body>
+	<script src="../service/usuarioDados.js"></script>
 </html>

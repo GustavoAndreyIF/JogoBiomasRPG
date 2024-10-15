@@ -1,0 +1,51 @@
+
+@font-face {
+  font-family: "selva"; /* Nome da fonte que você quer usar */
+  src: url("../fonts/Pine Forest Personal Use Only.otf")
+    format("truetype"); /* Caminho para a fonte */
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: brown;
+  display: flex; /* container flexivel */
+  flex-direction: column;
+  align-items: center;
+  font-family: "selva";
+  padding: 20px; /*separa as informações da borda*/
+}
+h1 {
+  text-align: center;
+  font-family: "selva";
+}
+
+.container /*elemento pai*/ {
+  display: grid; /* estrutura de grade */
+  grid-template-columns: repeat(2, 1fr); /* Define 2 colunas por linha */
+  gap: 20px; /* Espaço entre as caixas */
+  max-width: 800px; /* Limita a largura total do contêiner */
+}
+
+.box /*elemento filho*/ {
+  display: flex;
+  flex-direction: column; /* Organiza os itens dentro da caixa na vertical */
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #000000;
+  border-radius: 8px; /* bordas arredondadas */
+  padding: 20px; /*separa as informações da borda*/
+  width: 270px; /*largura*/
+  height: 300px; /*altura*/
+  text-align: center;
+}
+
+.box img {
+  border-radius: 5px;
+  height: 200px; /* Define uma altura fixa para as imagens */
+  object-fit: cover; /* Faz com que a imagem se ajuste sem distorcer */
+}
+.info {
+  font-family: Arial;
+  color: #666; /* Cor do texto informativo */
+  font-size: 1em; /* Tamanho da fonte */
+  margin: 10px 0; /* Espaço acima e abaixo do parágrafo */
+}

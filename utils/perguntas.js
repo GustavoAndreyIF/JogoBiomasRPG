@@ -15,13 +15,12 @@ export const medicoPerguntas = {
 		},
 		dt: {
 			0: 0,
-			1: 16,
-			2: 20,
+			1: 20,
 		},
 		dtbonus: {
 			0: "carisma",
 			1: "carisma",
-			2: "carisma",
+
 		},
 		resultado: {
 			0: {
@@ -29,10 +28,6 @@ export const medicoPerguntas = {
 				false: "0",
 			},
 			1: {
-				true: "1",
-				false: "0",
-			},
-			2: {
 				true: "1",
 				false: "0",
 			},
