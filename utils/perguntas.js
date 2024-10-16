@@ -5,10 +5,10 @@ export const agricultorPerguntas = {}
 export const medicoPerguntas = {
 	0: {
 		pergunta: {
-			p1: `doutor, estou sentindo muitas dores e estresse nos ultimos dias, o que podemos fazer?`,
+			p1: `Bem vindo à cidade, soube que você é médico certo? A população vem reclamando de sentir muitas dores e estresse nos ultimos dias, o que podemos fazer?`,
 		},
 		alternativas: {
-			0: "O que acha de organizar um grupo de apoio",
+			0: "O que acha de organizar um grupo de apoio?",
 			1: "E se implementarmos atividades de lazer na comunidade?",
 		},
 		dt: {
